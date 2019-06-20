@@ -132,6 +132,7 @@ def main():
     print("Star Effective Temp: {} (K)".format(star_data.star_effective_temperature))
     print("Allowable Orbits:    {}".format(orbit_data.max_number_of_orbits_allowable))
 
+    # TODO
     # Update this to write the data to a file, preferably in csv format if possible.
     # Will likely need data converting to a DataFrame before writing it out to the file.
     # Will need some way of indexing it for easy retrieval, possibly by the ID number on the Near Star List,
