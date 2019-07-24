@@ -85,8 +85,29 @@ class OrbitData:
     def initial_orbit(self):
         innermost_orbit = random.randint(0, 9)
         if innermost_orbit == 0:
-            orbit_status = "Empty"  # Arrggh! I've lost the thread of where I was going. Pandas dataframe to hold the
-                                    # orbit data, I think. That way it can be categorised in a table.
+            orbit_status = "Empty"
+            orbit_radius = random.randint(1, 9) * 0.1
+        else:
+            orbit_radius = innermost_orbit * 0.1
+            if (orbit_radius * 150000000) <= (self.star_radius * 695510):
+                orbit_status = "Empty"
+            else:
+                if self.star_luminosity >= 130 and orbit_radius == 0.1:
+                    orbit_status = "Empty"
+                elif self.star_luminosity >= 520 and orbit_radius == 0.2:
+                    orbit_status = "Empty"
+                elif self.star_luminosity >= 1170 and orbit_radius == 0.3:
+                    orbit_status = "Empty"
+                elif self.star_luminosity >= 2090 and orbit_radius == 0.4:
+                    orbit_status = "Empty"
+                elif self.star_luminosity >= 3270 and orbit_radius == 0.5:
+                    orbit_status = "Empty"
+                else:
+                    orbit_status = "Populated"
+        # Need to add in setting up the dictionaries for the orbit details (status, radius and zone)
+
+    def subsequent_orbits(self):
+        pass  # TODO
 
 
 class WorldData:
